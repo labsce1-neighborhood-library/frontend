@@ -18,7 +18,7 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
+          ? `md-qr-scanner`
           : 'md-qr-scanner'
       }
     />
@@ -34,7 +34,7 @@ LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-bookmark'}
+      name={Platform.OS === 'ios' ? 'md-bookmark' : 'md-bookmark'}
     />
   ),
 };
@@ -48,7 +48,7 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-search'}
+      name={Platform.OS === 'ios' ? 'md-search' : 'md-search'}
     />
   ),
 };
@@ -62,7 +62,7 @@ BrowseStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-book'}
+      name={Platform.OS === 'ios' ? 'ios-bookmarks' : 'md-book'}
     />
   ),
 };
@@ -76,7 +76,7 @@ MoreStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-more'}
+      name={Platform.OS === 'ios' ? 'ios-more' : 'md-more'}
     />
   ),
 };
