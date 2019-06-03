@@ -1,5 +1,6 @@
 # frontend
-
+To view the build, you can use the Expo app and scan the QR code (android), or click on the neighborhood-library project.
+https://expo.io/@labsce-neighborhood/neighborhood-library
 
 https://trello.com/b/TaQwsbuj/labsce1-neighborhood-library
 https://balsamiq.cloud/snv27r3/p8o4zbq/r491A
