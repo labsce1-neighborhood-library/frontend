@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { List } from 'react-native-paper';
 
 
@@ -15,23 +15,25 @@ export default class ShelfScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <List.Item
-        title= "Borrowed"
-        description= "10 books"
-        left={props => <List.Icon {...props} icon="book" />}
-        />
-        <List.Item
-        title= "Loaned Out"
-        description= "4 books"
-        left={props => <List.Icon {...props} icon="book" />}
-        />
-        <List.Item
-        title= "Home Library"
-        description= "150 books"
-        left={props => <List.Icon {...props} icon="book" />}
-        />
-      </ScrollView>
+
+          <ScrollView style={styles.container}>
+            <List.Item
+            title= "Borrowed"
+            description= "10 books"
+            left={props => <List.Icon {...props} icon="book" />}
+            />
+            <List.Item
+            title= "Loaned Out"
+            description= "4 books"
+            left={props => <List.Icon {...props} icon="book" />}
+            />
+            <List.Item
+            title= "Home Library"
+            description= "150 books"
+            left={props => <List.Icon {...props} icon="book" />}
+            />
+          </ScrollView>
+      
     );
   }
 }
