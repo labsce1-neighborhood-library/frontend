@@ -4,8 +4,9 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import ShelfScreen from '../screens/ShelfScreen';
+import BrowseScreen from '../screens/BrowseScreen';
+import MoreScreen from '../screens/MoreScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -18,29 +19,29 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
+          ? `md-qr-scanner`
           : 'md-qr-scanner'
       }
     />
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const ShelfStack = createStackNavigator({
+  Shelf: ShelfScreen,
 });
 
-LinksStack.navigationOptions = {
+ShelfStack.navigationOptions = {
   tabBarLabel: 'Shelf',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-bookmark'}
+      name={Platform.OS === 'ios' ? 'md-bookmark' : 'md-bookmark'}
     />
   ),
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: MoreScreen,
 });
 
 SettingsStack.navigationOptions = {
@@ -48,13 +49,13 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-search'}
+      name={Platform.OS === 'ios' ? 'md-search' : 'md-search'}
     />
   ),
 };
 
 const BrowseStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: BrowseScreen,
 });
 
 BrowseStack.navigationOptions = {
@@ -62,13 +63,13 @@ BrowseStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-book'}
+      name={Platform.OS === 'ios' ? 'ios-bookmarks' : 'md-book'}
     />
   ),
 };
 
 const MoreStack = createStackNavigator({
-  Settings: SettingsScreen,
+  More: MoreScreen,
 });
 
 MoreStack.navigationOptions = {
@@ -76,14 +77,14 @@ MoreStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-more'}
+      name={Platform.OS === 'ios' ? 'ios-more' : 'md-more'}
     />
   ),
 };
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  ShelfStack,
   SettingsStack,
   BrowseStack,
   MoreStack
