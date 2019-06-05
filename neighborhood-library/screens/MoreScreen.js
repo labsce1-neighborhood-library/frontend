@@ -6,7 +6,7 @@ import { List } from 'react-native-paper';
 
 export default class MoreScreen extends React.Component {
   static navigationOptions = {
-    title: 'app.json',
+    title: '{username}',
     headerTintColor: 'white',
     headerStyle: {
       backgroundColor: '#2C333D',

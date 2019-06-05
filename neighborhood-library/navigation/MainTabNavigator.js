@@ -5,6 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ShelfScreen from '../screens/ShelfScreen';
+import BrowseScreen from '../screens/BrowseScreen';
 import MoreScreen from '../screens/MoreScreen';
 
 const HomeStack = createStackNavigator({
@@ -54,7 +55,7 @@ SettingsStack.navigationOptions = {
 };
 
 const BrowseStack = createStackNavigator({
-  Settings: MoreScreen,
+  Settings: BrowseScreen,
 });
 
 BrowseStack.navigationOptions = {
