@@ -5,7 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import ShelfScreen from '../screens/ShelfScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import MoreScreen from '../screens/MoreScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -40,7 +40,7 @@ ShelfStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: MoreScreen,
 });
 
 SettingsStack.navigationOptions = {
@@ -54,7 +54,7 @@ SettingsStack.navigationOptions = {
 };
 
 const BrowseStack = createStackNavigator({
-  Settings: SettingsScreen,
+  Settings: MoreScreen,
 });
 
 BrowseStack.navigationOptions = {
@@ -68,7 +68,7 @@ BrowseStack.navigationOptions = {
 };
 
 const MoreStack = createStackNavigator({
-  Settings: SettingsScreen,
+  More: MoreScreen,
 });
 
 MoreStack.navigationOptions = {
