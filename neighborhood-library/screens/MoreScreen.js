@@ -47,6 +47,10 @@ export default class MoreScreen extends React.Component {
         title="Billing"
         left={props => <List.Icon {...props} icon="gesture" />}
         />
+        <List.Item 
+        title="Sign Out"
+        left={props => <List.Icon {...props} icon="arrow_left" />}
+        />
 
       </ScrollView>
     )

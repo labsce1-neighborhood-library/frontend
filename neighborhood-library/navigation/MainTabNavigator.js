@@ -82,10 +82,25 @@ MoreStack.navigationOptions = {
   ),
 };
 
+const LogIn = createStackNavigator({
+  More: MoreScreen,
+});
+
+MoreStack.navigationOptions = {
+  tabBarLabel: 'Login',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-history' : 'md-history'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
   HomeStack,
   ShelfStack,
   SettingsStack,
   BrowseStack,
-  MoreStack
+  MoreStack,
+  LogIn,
 });
