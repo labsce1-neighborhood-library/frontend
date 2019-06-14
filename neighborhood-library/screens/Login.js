@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, Button } from 'react-native';
+import { ScrollView, StyleSheet, Text, Button, View } from 'react-native';
 // import Expo from 'expo';
 import { Google } from 'expo';
 import { androidClientId, iosClientId } from "../API";
@@ -34,10 +34,19 @@ export default class LoginScreen extends React.Component {
     render() {
         return (
             <ScrollView style={styles.container}>
-                <Button 
-                onPress={this.signInWithGoogleAsync.bind(this)}
-                title= "Google Sign In"
-                />
+                <Text style={styles.mainText}>
+                  Treat Yo' Shelf
+                </Text>
+                <Text style={styles.sideText}>
+                  Log in to find a great book.
+                </Text>
+                <View style={[{ width: "50%", margin: 10, backgroundColor: "white"}]}>
+                  <Button 
+                  style={styles.loginButton}
+                  onPress={this.signInWithGoogleAsync.bind(this)}
+                  title= "Continue with Google"
+                  />
+                </View>
             </ScrollView>
         );
     }
@@ -45,8 +54,25 @@ export default class LoginScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        paddingTop: 150,
-        backgroundColor: '#fff',
+        flex: 2,
+        paddingTop: 120,
+        backgroundColor: '#2C333D',
     },
+    loginButton: {
+      paddingBottom: 20,
+      paddingHorizontal: 20,
+      color: '#fff',
+    },
+    mainText: {
+      fontSize: 48,
+      paddingHorizontal: 15,
+      color: '#fff',
+
+    },
+    sideText: {
+      fontSize: 24,
+      color: '#fff',
+      paddingBottom: 20,
+      paddingHorizontal: 20,
+    }
 });
