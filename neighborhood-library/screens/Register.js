@@ -1,76 +1,32 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, Button, View, Image, TouchableOpacity, AsyncStorage } from 'react-native';
+import { ScrollView, StyleSheet, Text, Button, View, Image, TouchableOpacity } from 'react-native';
 import {TextInput } from 'react-native-paper';
 import Expo from 'expo';
 import { Google } from 'expo';
 import { androidClientId, iosClientId } from "../API";
-import axios from 'axios';
 
-export default class LoginScreen extends React.Component {
+export default class Register extends React.Component {
+
     constructor(props) {
-      super(props), 
-      this.state = {
-        value: {
-          username: '',
-          password: '',
+        super(props);
+        this.state = {
+            username: '',
+            password: '',
         }
-      }
-    }
-
-    componentWillMount() {
-      this.setState = {
-        value: {
-          email: '',
-          password: null,
-        }
-      }
-    }
-
-    _onChange = value => {
-      this.setState({ 
-        value 
-      })
-    }
-
-    _handleAdd = () => {
-      const value = this.refs.form.getValue();
-      //if form is valid 
-      if(value) {
-        const data = {
-          username: value.username,
-          password: value.password,
-        }
-
-        const json = JSON.stringfy(data);
-        axios.get('https://localhost:7777/login', {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-            Accept: 'application/json'
-          }, 
-          body: json,
-        })
-        .then((res) => res.json())
-        .then((res) => {
-          if(res.error) {
-            alert(res.error);
-          } else {
-            AsyncStorage.setItem('jwt', res.token);
-            alert('Welcome Friend');
-          }
-        })
-        .catch(() => {
-          alert('there was an error logging in')
-        })
-        .done()
-      } else { 
-        alert('please fix the errors and try again');
-      }
     }
 
     static navigationOptions = {
         title: 'Links',
     };
+
+    componentWillMount() {
+        this.setState = {
+          value: {
+            email: '',
+            password: null,
+          }
+        }
+      }
     
     async signInWithGoogleAsync() {
         try {
@@ -94,15 +50,50 @@ export default class LoginScreen extends React.Component {
         }
       }
 
+      _handleAdd = () => {
+        const value = this.refs.form.getValue();
+        //if form is valid 
+        if(value) {
+          const data = {
+            username: value.username,
+            password: value.password,
+          }
+  
+          const json = JSON.stringfy(data);
+          axios.get('https://localhost:7777/register', {
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json',
+              Accept: 'application/json'
+            }, 
+            body: json,
+          })
+          .then((res) => res.json())
+          .then(() => {
+            alert('Welcome and enjoy the books!')
+          })
+          .catch(() => {
+            alert('there was an error registering')
+          })
+          .done()
+        } else { 
+          alert('please fix the errors and try again');
+        }
+      }
+
     render() {
         return (
             <ScrollView style={styles.container}>
                 <Text style={styles.mainText}>
-                  Treat Yo' Shelf
+                  Register Now And Treat Yo' Shelf
                 </Text>
                 <Text style={styles.sideText}>
-                  Log in to find a great book.
+                  Sign Up in to find a great book.
                 </Text>
+                <View>
+                <TextInput placeholder='username' />
+                </View>
+                <View style={styles.SeparatorLine} />
                 <View>
                 <TextInput placeholder='username' />
                 </View>
